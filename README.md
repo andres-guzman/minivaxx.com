@@ -1,2 +1,2 @@
 # minivaxx.com
-# URL I use as a main domain, basically.
+URL I use as a main domain, basically.
