@@ -1,0 +1,432 @@
+/*
+   minivaxx.css
+   Andres Guzman (andres@skyyym.com)
+   October 10, 2019
+*/
+
+/* ==========================================================================
+   fonts
+   ========================================================================== */
+
+@font-face {
+    font-family: 'Nimbus Bold';
+    src: url('css/nimbusboldextended/nimbus-sans-d-ot-bold-extended_32745-webfont.woff2') format('woff2'),
+         url('css/nimbusboldextended/nimbus-sans-d-ot-bold-extended_32745-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nimbus Regular';
+    src: url('css/nimbusregularextended/nimbus-sans-d-ot-regular-extended_32755-webfont.woff2') format('woff2'),
+         url('css/nimbusregularextended/nimbus-sans-d-ot-regular-extended_32755-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   start
+   ========================================================================== */
+
+:root {
+    --color-dark: rgba(255, 255, 255, 1);
+    --color-half: rgba(92, 32, 230, 1);
+}
+
+::-moz-selection {
+    background: var(--color-half);
+    color: #ffffff;
+    text-shadow: none;
+}
+
+::selection {
+    background: var(--color-half);
+    color: #ffffff;
+    text-shadow: none;
+}
+
+
+@keyframes marquee {
+    0% {
+      transform: translate(100%, -50%); 
+    }
+
+    100% {
+      transform: translate(-70%, -50%); 
+    }
+}
+
+@keyframes fadeIn-transform {
+    0% {
+      transform: translateY(4%); 
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0%); 
+      opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+}
+  
+
+  
+@keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+  
+a {
+    background-color: transparent;
+}
+
+img {
+    border-style: none;
+}
+
+p {
+    margin: 0;
+}
+
+/* ==========================================================================
+   basic styles
+   ========================================================================== */
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+.bg {
+    font-size: 30vw;
+    font-family: "Nimbus Bold";
+    color: var(--color-half);
+    position: fixed;
+    right: 0;
+    top: 50%;
+    /*transform: translate(100%, -50%);*/
+    pointer-events: none;
+    z-index: -1;
+    animation: marquee 90s linear infinite;
+    user-select: none;
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+  
+
+.fadeInLeft {
+    animation-name: fadeInLeft;
+}
+
+.animated {
+    animation-duration: 1.25s;
+    animation-delay: 0.25s;
+    animation-fill-mode: both;
+}
+
+
+
+/* ==========================================================================
+   custom cursor
+   ========================================================================== */
+
+
+.cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.cursor--small {
+    width: 5px;
+    height: 5px;
+    left: -2.5px;
+    top: -2.5px;
+    border-radius: 50%;
+    z-index: 11000;
+    background: var(--color-dark);
+    mix-blend-mode: difference;
+}
+.cursor--canvas {
+    width: 100vw;
+    height: 100vh;
+    z-index: 12000;
+}
+
+/*body {
+    cursor: none;
+}*/
+
+body a:hover {
+ cursor: pointer;
+}
+
+/* ==========================================================================
+   main
+   ========================================================================== */
+
+main {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+
+.section-title {
+    color: var(--color-half);
+    font: 18px "Nimbus Regular", Arial, Helvetica, sans-serif;
+    position: relative;
+    mix-blend-mode: difference;
+    will-change: opacity;
+}
+
+
+
+/* ==========================================================================
+   section start
+   ========================================================================== */
+
+.start {
+    margin-bottom: 40vh;
+}
+
+h1 {
+    color: var(--color-dark);
+    font-family: "Nimbus Bold", Arial, Helvetica, sans-serif;
+    font-size: 5.5vw;
+    margin: 0;
+    opacity: 0;
+    animation-name: fadeIn-transform;
+    animation-delay: 0.75s;
+    animation-duration: 1.8s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    transition: all .35s ease 0s;
+}
+
+#title-minivaxx {
+    margin-bottom: 280px;
+    padding-top: 40px;
+}
+
+#title-minivaxx::before {
+    content: "01";
+    position: absolute;
+    top: 40px;
+    left: -100px;
+}
+
+
+/* ==========================================================================
+   section about
+   ========================================================================== */
+
+#title-about {
+    margin-bottom: 80px;
+}
+
+#title-about::before {
+    content: "02";
+    position: absolute;
+    top: 1px;
+    left: -100px;
+}
+
+.about {
+    margin-bottom: 40vh;
+}
+
+.about p {
+    color: var(--color-dark);
+    font: 19px/29px "Nimbus Regular", Arial, Helvetica, sans-serif;
+}
+
+
+/* ==========================================================================
+   section what I do
+   ========================================================================== */
+
+.what-I-do {
+    margin-bottom: 40vh;
+}
+
+   
+#title-what-I-do {
+    margin-bottom: 100px;
+}
+
+#title-what-I-do::before {
+    content: "03";
+    position: absolute;
+    top: 1px;
+    left: -100px;
+}
+
+.design-and-code {
+    display: flex;
+}
+
+h2 {
+    color: var(--color-dark);
+    font: 23px "Nimbus Regular", Arial, Helvetica, sans-serif;
+    margin: 0 0 40px 0;
+}
+
+.design-box {
+    padding-right: 30px;
+    width: 50%;
+    transition: all .35s ease 0s;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.design-box ul li,
+.code-box ul li {
+    margin-bottom: 26px;
+    list-style-type: none;
+}
+
+.design-box ul li a,
+.code-box ul li a {
+    color: var(--color-half);
+    font: 19px/29px "Nimbus Regular", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--color-half);
+    transition: all .35s ease 0s;
+    mix-blend-mode: difference;
+    will-change: opacity;
+}
+
+.design-box ul li a:hover,
+.code-box ul li a:hover {
+    color: var(--color-dark);
+    border-bottom: 1px solid var(--color-dark);
+}
+
+.code-box {
+    padding-left: 30px;
+    width: 50%;
+    transition: all .35s ease 0s;
+}
+
+.design-box p,
+.code-box p {
+    color: var(--color-dark);
+    font: 19px/29px "Nimbus Regular", Arial, Helvetica, sans-serif;
+    margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   section contact
+   ========================================================================== */
+
+.contact {
+    margin-bottom: 40vh;
+}
+
+#title-contact {
+    margin-bottom: 100px;
+}
+
+#title-contact::before {
+    content: "04";
+    position: absolute;
+    top: 1px;
+    left: -100px;
+}
+
+.contact p {
+    color: var(--color-dark);
+    font: 19px/29px "Nimbus Regular", Arial, Helvetica, sans-serif;
+    max-width: 50%;
+    margin-bottom: 40px;
+}
+
+.contact a {
+    color: var(--color-half);
+    font: 19px/29px "Nimbus Regular", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--color-half);
+    transition: all .35s ease 0s;
+    mix-blend-mode: difference;
+    will-change: opacity;
+}
+
+.contact a:hover {
+    color: var(--color-dark);
+    border-bottom: 1px solid var(--color-dark);
+}
+
+/* ==========================================================================
+   footer
+   ========================================================================== */
+
+footer {
+    color: var(--color-dark);
+    padding-bottom: 40px;
+    font: 19px/29px "Nimbus Regular", Arial, Helvetica, sans-serif;
+}
+
+
+/* ==========================================================================
+   media queries
+   ========================================================================== */
+
+@media screen and (max-width: 680px) {
+    .design-and-code {
+        flex-direction: column;
+    }
+
+    .design-box {
+        padding-right: 0;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .code-box {
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .contact p {
+        max-width: 100%;        
+    }
+}
